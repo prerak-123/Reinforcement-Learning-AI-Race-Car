@@ -5,11 +5,12 @@ REPAIR_COST = -20
 PROFIT = 100
 MAINTENANCE = 70
 
+#Code remains almost same, just new state called condition introduced and probability function changed
 class PlantModel:
     def __init__(self):
         self.age = 0
         self.condition = 1
-        self.fail_probability = max(0.02 + 0.05*self.age, 1 - self.condition)
+        self.fail_probability = max(0.02 + 0.05*self.age, 1 - self.condition) #Seems like a typo in paper, got matching results for probability = 0.02 + ... instead of 0.2 + ...
         
     def reset(self):
         self.age = 0
@@ -40,6 +41,7 @@ LEARNING_RATE = 0.2
 epsilon = 0.8
 DELTA_EPSILON = 0.8 / 750
 
+#q table changed to account for condition. State is determined by (age, condition)
 q_table = np.zeros(shape=(20, 51, 2))
 plant = PlantModel()
 plant_age = 0

@@ -5,6 +5,7 @@ REPAIR_COST = -20
 PROFIT = 100
 MAINTENANCE = 70
 
+#Small changes only
 class PlantModel:
     def __init__(self):
         self.age = 0
