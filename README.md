@@ -158,17 +158,17 @@ Monte-Carlo policy evaluation uses empirical mean return instead of expected ret
 
 For each iteration:
 
-- Increament counter by one: $N(s) \larr N(s) + 1$
+- Increament counter by one: $N(s) \leftarrow N(s) + 1$
 
-- Increment total return $S(s) \larr S(s) + G_{t}$
+- Increment total return $S(s) \leftarrow S(s) + G_{t}$
 
-- Value is mean return $V(s) \larr S(s) / N(s)$
+- Value is mean return $V(s) \leftarrow S(s) / N(s)$
 
 ## Temporal Difference Learning
 
 Learns directly from incomplete episodes by updating a guess.
 
-$$V(S_t) \larr V(S_t) + \alpha(G_t - V(S_t))$$
+$$V(S_t) \leftarrow V(S_t) + \alpha(G_t - V(S_t))$$
 
 For TD(0):
 
